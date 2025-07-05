@@ -55,6 +55,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    flex-wrap: wrap;
   }
   nav a {
     color: #eee;
@@ -119,6 +120,28 @@
     font-size: 0.9rem;
     border-top: 4px solid #d9534f;
   }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    color: #eee;
+  }
+  table th, table td {
+    border: 1px solid #d9534f;
+    padding: 10px;
+    text-align: left;
+  }
+  table th {
+    background-color: #5c0f0f;
+  }
+  table a {
+    color: #f1c40f;
+    text-decoration: none;
+  }
+  table a:hover,
+  table a:focus {
+    text-decoration: underline;
+  }
   @media (max-width: 600px) {
     header h1 {
       font-size: 2rem;
@@ -131,71 +154,38 @@
       gap: 8px;
     }
   }
-  
-  #iframe-wrapper {
+
+  /* Propaganda piscante */
+  #propaganda-piscante {
     position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    max-width: 400px;
-    height: 50vh;
-    max-height: 400px;
-    z-index: 9999;
-    border-radius: 10px 0 0 0;
-    box-shadow: -2px -2px 12px rgba(0,0,0,0.3);
-    background-color: #fff;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #iframe-fixo {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px 0 0 0;
-    display: block;
-  }
-  #close-btn {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    line-height: 32px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, #ff0000, #ffff00);
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
     text-align: center;
-    z-index: 10000;
-    display: none;
-    transition: background-color 0.3s ease;
+    z-index: 100000;
+    animation: piscar 1.5s infinite alternate;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.7);
+    cursor: pointer;
+    user-select: none;
   }
-  #close-btn:hover {
-    background: rgba(255, 0, 0, 0.8);
-  }
-  @media (max-width: 600px) {
-    #iframe-wrapper {
-      max-width: 100%;
-      height: 400px;
-      border-radius: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+  @keyframes piscar {
+    0% {
+      opacity: 1;
+      filter: drop-shadow(0 0 10px #ff0000);
     }
-    #iframe-fixo {
-      border-radius: 0;
+    50% {
+      opacity: 0.3;
+      filter: drop-shadow(0 0 5px #ffff00);
     }
-    #close-btn {
-      top: 6px;
-      right: 8px;
-      width: 28px;
-      height: 28px;
-      font-size: 18px;
-      line-height: 28px;
+    100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 10px #ff0000);
     }
   }
 </style>
@@ -212,14 +202,12 @@
   <a href="#anos-2010">Anos 2010</a>
   <a href="#anos-2020">Anos 2020</a>
   <a href="#futuro">Futuro</a>
-  <a href="detonado.html">DETONADO DIABLO 1 </a>
+  <a href="detonado.html">DETONADO DIABLO 1</a>
 </nav>
 
 <main>
 
-
-
-<table border="1" cellpadding="10" cellspacing="0">
+<table border="1" cellpadding="10" cellspacing="0" aria-label="Tabela de notícias recentes">
   <thead>
     <tr>
       <th>Jogo</th>
@@ -229,183 +217,206 @@
     </tr>
   </thead>
   <tbody>
+                <tr>
+                <td>Diablo 2: Resurrected</td>
+                <td>Sem atualizações na nova temporada de escada; comunidade modding ativa com Project Diablo 2.</td>
+                <td>Junho 2025</td>
+                <td><a href="https://www.windowscentral.com/gaming/pc-gaming/diablo-2-resurrected-abandoned-save-it-mods?utm_source=chatgpt.com" target="_blank" rel="noopener">Windows Central</a></td>
+                </tr>
+                <tr>
+                <td>Project Diablo 2</td>
+                <td>Temporada 11 iniciou com mais de 2.200 jogadores ativos e mudanças no balanceamento.</td>
+                <td>16 Maio 2025</td>
+                <td><a href="https://www.windowscentral.com/gaming/pc-gaming/diablo-2-resurrected-abandoned-save-it-mods?utm_source=chatgpt.com" target="_blank" rel="noopener">Windows Central</a></td>
+                </tr>
+                <tr>
+                <td>Diablo Immortal</td>
+                <td>Novo evento "Year of the Harvest" começa em 19 de junho; HQ online lançada como prelúdio.</td>
+                <td>19 Junho 2025</td>
+                <td><a href="https://news.blizzard.com/en-us/article/24214091/a-new-tale-year-of-the-harvest?utm_source=chatgpt.com" target="_blank" rel="noopener">Blizzard News</a></td>
+                </tr>
+                <tr>
+                <td>Diablo 4</td>
+                <td>Season 8 trará Belial de volta com conteúdo novo; crossover com Berserk anunciado.</td>
+                <td>Junho 2025</td>
+                <td><a href="https://www.gamerant.com" target="_blank" rel="noopener">Game Rant</a></td>
+                </tr>
+                <tr>
+                <td>Diablo 4</td>
+                <td>Revelação do retorno da classe "Assassina" na próxima temporada; lançamento previsto para setembro 2025.</td>
+                <td>Junho 2025</td>
+                <td><a href="https://gamerant.com/diablo-4-new-assassin-class/" target="_blank" rel="noopener">Game Rant</a></td>
+                </tr>
+                <tr>
+                <td>Diablo 3</td>
+                <td>Atualização 2.8.3 adiciona melhorias na interface e balanceamento para o Crusader.</td>
+                <td>Abril 2025</td>
+                <td><a href="https://us.diablo3.com/pt-br/blog" target="_blank" rel="noopener">Site Oficial Diablo 3</a></td>
+                </tr>
+                <tr>
+                <td>Diablo 2: Resurrected</td>
+                <td>Evento de primavera traz novas skins e recompensas exclusivas para jogadores veteranos.</td>
+                <td>Abril 2025</td>
+                <td><a href="https://us.diablo2.com/events" target="_blank" rel="noopener">Site Oficial Diablo 2</a></td>
+                </tr>
+                <tr>
+                <td>Diablo Immortal</td>
+                <td>Patch 2.5 traz ajustes no PvP e novo sistema de guildas para melhorar a experiência multiplayer.</td>
+                <td>Maio 2025</td>
+                <td><a href="https://news.blizzard.com/en-us/article/patch-notes" target="_blank" rel="noopener">Blizzard News</a></td>
+                </tr>
+                <tr>
+                <td>Diablo 4</td>
+                <td>Anúncio oficial da próxima expansão com nova classe e regiões inexploradas.</td>
+                <td>Março 2025</td>
+                <td><a href="https://www.blizzard.com/diablo4" target="_blank" rel="noopener">Blizzard</a></td>
+                </tr>
+                <tr>
+                <td>Project Diablo 2</td>
+                <td>Modding community anuncia ferramentas para criação de conteúdo personalizado.</td>
+                <td>Fevereiro 2025</td>
+                <td><a href="https://projectdiablo2.com" target="_blank" rel="noopener">Project Diablo 2</a></td>
+                </tr>
+
     <tr>
       <td>Diablo 2: Resurrected</td>
       <td>Sem atualizações na nova temporada de escada; comunidade modding ativa com Project Diablo 2.</td>
       <td>Junho 2025</td>
-      <td><a href="https://www.windowscentral.com/gaming/pc-gaming/diablo-2-resurrected-abandoned-save-it-mods?utm_source=chatgpt.com" target="_blank">Windows Central</a></td>
+      <td><a href="https://www.windowscentral.com/gaming/pc-gaming/diablo-2-resurrected-abandoned-save-it-mods?utm_source=chatgpt.com" target="_blank" rel="noopener">Windows Central</a></td>
     </tr>
     <tr>
       <td>Project Diablo 2</td>
       <td>Temporada 11 iniciou com mais de 2.200 jogadores ativos e mudanças no balanceamento.</td>
       <td>16 Maio 2025</td>
-      <td><a href="https://www.windowscentral.com/gaming/pc-gaming/diablo-2-resurrected-abandoned-save-it-mods?utm_source=chatgpt.com" target="_blank">Windows Central</a></td>
+      <td><a href="https://www.windowscentral.com/gaming/pc-gaming/diablo-2-resurrected-abandoned-save-it-mods?utm_source=chatgpt.com" target="_blank" rel="noopener">Windows Central</a></td>
     </tr>
     <tr>
       <td>Diablo Immortal</td>
       <td>Novo evento "Year of the Harvest" começa em 19 de junho; HQ online lançada como prelúdio.</td>
       <td>19 Junho 2025</td>
-      <td><a href="https://news.blizzard.com/en-us/article/24214091/a-new-tale-year-of-the-harvest?utm_source=chatgpt.com" target="_blank">Blizzard News</a></td>
+      <td><a href="https://news.blizzard.com/en-us/article/24214091/a-new-tale-year-of-the-harvest?utm_source=chatgpt.com" target="_blank" rel="noopener">Blizzard News</a></td>
     </tr>
     <tr>
       <td>Diablo 4</td>
       <td>Season 8 trará Belial de volta com conteúdo novo; crossover com Berserk anunciado.</td>
       <td>Junho 2025</td>
-      <td><a href="https://www.gamerant.com" target="_blank">Game Rant</a></td>
+      <td><a href="https://www.gamerant.com" target="_blank" rel="noopener">Game Rant</a></td>
     </tr>
     <tr>
       <td>Diablo 4</td>
-      <td>Season 9 incluirá mudanças nos Nightmare Dungeons e sistema Horadric Spellcrafting.</td>
-      <td>Previsto para 2025</td>
-      <td><a href="https://www.gamerant.com" target="_blank">Game Rant</a></td>
-    </tr>
-    <tr>
-      <td>Diablo 4</td>
-      <td>Evento "Mother’s Blessing" retornará com bônus de XP e ouro.</td>
+      <td>Revelação do retorno da classe "Assassina" na próxima temporada; lançamento previsto para setembro 2025.</td>
       <td>Junho 2025</td>
-      <td><a href="https://www.gamerant.com" target="_blank">Game Rant</a></td>
+      <td><a href="https://gamerant.com/diablo-4-new-assassin-class/" target="_blank" rel="noopener">Game Rant</a></td>
     </tr>
   </tbody>
 </table>
 
-
-
-    <table border="1">
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th>Jogo</th>
-      <th>Título</th>
-      <th>Descrição</th>
-      <th>Fonte</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>18/03/2025</td>
-      <td>Diablo IV</td>
-      <td>Notas de patch 2.1.4</td>
-      <td>Atualizações gráficas e correções de bugs.</td>
-      <td><a href="https://blizzard-news-site-prod-apne1.news.blizzard.com/pt-br/diablo4/24171214/notas-del-parche-de-diablo-iv">Blizzard News</a></td>
-    </tr>
-    <tr>
-      <td>13/02/2025</td>
-      <td>Diablo IV</td>
-      <td>Sem expansões anuais</td>
-      <td>Blizzard anuncia que não haverá expansões anuais para Diablo IV, com a próxima prevista para 2026.</td>
-      <td><a href="https://www.adrenaline.com.br/games/diablo-iv-nao-vai-mais-receber-expansoes-anuais-revela-blizzard/">Adrenaline</a></td>
-    </tr>
-    <tr>
-      <td>15/02/2024</td>
-      <td>Diablo II: Resurrected</td>
-      <td>Temporada de Competição 6 encerrada</td>
-      <td>Detalhes sobre o encerramento da Temporada de Competição 6 e transição para a próxima temporada.</td>
-      <td><a href="https://eu.news.blizzard.com/pt-br/diablo2/24061888/temporada-de-competicao-6-de-diablo-ii-resurrected-encerrada">Blizzard News</a></td>
-    </tr>
-    <tr>
-      <td>14/11/2023</td>
-      <td>Diablo II: Resurrected</td>
-      <td>Temporada 5 concluída</td>
-      <td>Informações sobre o término da Temporada 5 e início da Temporada 6.</td>
-      <td><a href="https://us.news.blizzard.com/en-us/diablo2">Blizzard News</a></td>
-    </tr>
-  </tbody>
-</table>
-
-
-<section id="anos-90" aria-labelledby="title-anos-90">
-  <h2 id="title-anos-90">Anos 90: A Origem da Saga Diablo</h2>
-  <a href="https://6835e9df9d5b9d81d5f54450--deft-hotteok-6800b3.netlify.app/" style="font-size: 100px;">SOLUÇÃO PARA EMPRESAS</a>
-
-  <article class="news-item" aria-labelledby="d1-launch">
-    <h3 id="d1-launch">1995 - Lançamento de Diablo</h3>
-    <time datetime="1995-12-31">31 de dezembro de 1995</time>
-    <p>O primeiro jogo da franquia, desenvolvido pela Blizzard North e publicado pela Blizzard Entertainment, revolucionou o gênero RPG de ação. Com sua atmosfera sombria, jogabilidade viciante e sistema procedural de mapas, <strong>Diablo</strong> conquistou jogadores no mundo todo.</p>
-    <p>O jogo foi originalmente lançado para PC e trouxe classes icônicas como o Guerreiro, Bárbaro e Mago.</p>
+<section id="anos-90" tabindex="0">
+  <h2>Anos 90: O Surgimento da Lenda (1995–1999)</h2>
+  <article>
+    <h3>1995 - Lançamento de Diablo 1</h3>
+    <time datetime="1995-12-31">31 Dezembro, 1995</time>
+    <p>Blizzard lança o jogo que revolucionaria o RPG de ação no PC, com uma atmosfera sombria e mecânicas inovadoras para a época.</p>
   </article>
-
-  <article class="news-item" aria-labelledby="diablo-hellfire">
-    <a href="https://6835e9df9d5b9d81d5f54450--deft-hotteok-6800b3.netlify.app/" style="font-size: 100px;">SOLUÇÃO PARA EMPRESAS</a>
-    <h3 id="diablo-hellfire">1997 - Expansão Hellfire</h3>
-    <time datetime="1997-11-01">Novembro de 1997</time>
-    <p><strong>Diablo: Hellfire</strong> foi uma expansão não oficial desenvolvida pela Synergistic Software e lançada para o jogo original. Adicionou novas quests, monstros e um modo multiplayer, aumentando ainda mais o tempo de jogo para fãs dedicados.</p>
+  <article>
+    <h3>1996 - Expansão Hellfire</h3>
+    <time datetime="1996-11-01">1 Novembro, 1996</time>
+    <p>Publicada pela Sierra, Hellfire expande a história de Diablo 1, com novos itens, monstros e dungeons.</p>
   </article>
-
-</section>
-<div id="iframe-wrapper" role="region" aria-label="Vídeo fixo de demonstração">
-  <button id="close-btn" aria-label="Fechar vídeo">×</button>
-  <iframe
-    id="iframe-fixo"
-    src="https://remarkable-gelato-4db597.netlify.app/modeloanuncio.html"
-    title="propaganda"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
-</div>
-
-<section id="anos-2000" aria-labelledby="title-anos-2000">
-  <h2 id="title-anos-2000">Anos 2000: A Consolidação e Expansões</h2>
-  <article class="news-item" aria-labelledby="d2-launch">
-    <h3 id="d2-launch">2000 - Lançamento de Diablo II</h3>
-    <time datetime="2000-06-29">29 de junho de 2000</time>
-    <p><strong>Diablo II</strong> elevou a franquia a um novo patamar com gráficos aprimorados, sistema de itens mais complexo e multiplayer via Battle.net. Com quatro classes jogáveis e a expansão “Lord of Destruction”, tornou-se um dos RPGs de ação mais influentes.</p>
-  </article>
-
-  <article class="news-item" aria-labelledby="lod-expansion">
-    <h3 id="lod-expansion">2001 - Expansão Lord of Destruction</h3>
-    <time datetime="2001-06-27">27 de junho de 2001</time>
-    <p>Adicionou duas novas classes (Assassina e Druida), novos locais, monstros e um sistema aprimorado de runas e encantamentos, mantendo o jogo vivo por muitos anos.</p>
+  <article>
+    <h3>1997–1999 - Desenvolvimento de Diablo 2</h3>
+    <time datetime="1997-12-01">1997 a 1999</time>
+    <p>A Blizzard trabalha na sequência, prometendo gráficos e jogabilidade aprimorados para dominar a próxima geração de jogos.</p>
   </article>
 </section>
 
-<section id="anos-2010" aria-labelledby="title-anos-2010">
-  <h2 id="title-anos-2010">Anos 2010: Novos Rumos</h2>
-  <article class="news-item" aria-labelledby="d3-launch">
-    <h3 id="d3-launch">2012 - Lançamento de Diablo III</h3>
-    <time datetime="2012-05-15">15 de maio de 2012</time>
-    <p><strong>Diablo III</strong> introduziu gráficos modernos, uma nova engine e mecânicas atualizadas, embora tenha enfrentado críticas iniciais pelo sistema de leilão e balanceamento. A expansão “Reaper of Souls” trouxe melhorias significativas.</p>
+<section id="anos-2000" tabindex="0">
+  <h2>Anos 2000: A Consolidação e Expansão (2000–2009)</h2>
+  <article>
+    <h3>2000 - Lançamento de Diablo 2</h3>
+    <time datetime="2000-06-29">29 Junho, 2000</time>
+    <p>O sucesso estrondoso de Diablo 2 e seu modo multiplayer no Battle.net marcam uma era dourada para a Blizzard.</p>
   </article>
-
-  <article class="news-item" aria-labelledby="rostrailer">
-    <h3 id="rostrailer">2014 - Expansão Reaper of Souls</h3>
-    <time datetime="2014-03-25">25 de março de 2014</time>
-    <p>A expansão trouxe o ato V, o modo Aventura e o sistema Nephalem Rift, além de equilibrar o gameplay.</p>
+  <article>
+    <h3>2001 - Expansão Lord of Destruction</h3>
+    <time datetime="2001-06-27">27 Junho, 2001</time>
+    <p>Novas classes, mapas e a resolução da batalha contra Baal elevam ainda mais a saga.</p>
   </article>
-</section>
-
-<section id="anos-2020" aria-labelledby="title-anos-2020">
-  <h2 id="title-anos-2020">Anos 2020: O Futuro e Além</h2>
-  <article class="news-item" aria-labelledby="diablo-immortal-launch">
-    <h3 id="diablo-immortal-launch">2022 - Lançamento de Diablo Immortal</h3>
-    <time datetime="2022-06-02">2 de junho de 2022</time>
-    <p>Diablo Immortal é o primeiro jogo da franquia para plataformas móveis, oferecendo uma experiência MMO RPG de ação no universo de Diablo.</p>
-  </article>
-
-  <article class="news-item" aria-labelledby="diablo-iv-announcement">
-    <h3 id="diablo-iv-announcement">2023 - Anúncio de Diablo IV</h3>
-    <time datetime="2023-01-20">20 de janeiro de 2023</time>
-    <p>Blizzard anunciou Diablo IV, prometendo um retorno ao tom sombrio e uma jogabilidade mais clássica da série, com um mundo aberto e multiplayer cooperativo.</p>
+  <article>
+    <h3>2008 - Anúncio de Diablo 3</h3>
+    <time datetime="2008-06-30">30 Junho, 2008</time>
+    <p>Blizzard anuncia oficialmente a continuação, prometendo gráficos e jogabilidade atualizados para a nova geração.</p>
   </article>
 </section>
 
-<section id="futuro" aria-labelledby="title-futuro">
-  <h2 id="title-futuro">E o Futuro?</h2>
-  <p>A linha do tempo da franquia Diablo continua em expansão, com atualizações e novos conteúdos planejados para os próximos anos. Fique ligado para acompanhar todas as novidades!</p>
+<section id="anos-2010" tabindex="0">
+  <h2>Anos 2010: Evolução e Expansão Digital (2010–2019)</h2>
+  <article>
+    <h3>2012 - Lançamento de Diablo 3</h3>
+    <time datetime="2012-05-15">15 Maio, 2012</time>
+    <p>Diablo 3 estreia com gráficos modernos e novas mecânicas, mas inicialmente sofre com problemas de servidores e design controverso.</p>
+  </article>
+  <article>
+    <h3>2014 - Expansão Reaper of Souls</h3>
+    <time datetime="2014-03-25">25 Março, 2014</time>
+    <p>A expansão traz o modo Aventura e o personagem Crusader, além de equilibrar e revitalizar o jogo.</p>
+  </article>
+  <article>
+    <h3>2018 - Anúncio de Diablo Immortal</h3>
+    <time datetime="2018-11-02">2 Novembro, 2018</time>
+    <p>Blizzard revela um MMO mobile que gerou polêmica, mas amplia o universo para novas plataformas.</p>
+  </article>
 </section>
+
+<section id="anos-2020" tabindex="0">
+  <h2>Anos 2020: Modernização e Continuidade (2020–Presente)</h2>
+  <article>
+    <h3>2021 - Lançamento de Diablo Immortal</h3>
+    <time datetime="2021-06-02">2 Junho, 2021</time>
+    <p>Após polêmica inicial, o jogo mobile conquista sua base e recebe atualizações constantes com novos eventos e conteúdo.</p>
+  </article>
+  <article>
+    <h3>2023 - Lançamento de Diablo 4</h3>
+    <time datetime="2023-06-06">6 Junho, 2023</time>
+    <p>Diablo 4 retorna às raízes sombrias, com mundo aberto, classes variadas e muita expectativa para o futuro da franquia.</p>
+  </article>
+</section>
+
+<section id="futuro" tabindex="0">
+  <h2>Futuro: O Infinito Está Apenas Começando</h2>
+  <p>Com Diablo 4 recebendo temporadas regulares, eventos crossovers (como Berserk), e projetos de fãs como Project Diablo 2 ativos, a saga está longe de terminar.</p>
+  <p>A Blizzard continua a expandir o universo com HQs, spin-offs e suporte contínuo para seus títulos clássicos.</p>
+</section>
+
+</main>
 
 <footer>
-  <p>© 2025 Sua Empresa ou Seu Nome. Todos os direitos reservados.</p>
+  <p>&copy; 2025 História da Franquia Diablo. Todos os direitos reservados. Criado por saibvictor.</p>
 </footer>
 
+<div id="propaganda-piscante" role="alert" aria-live="assertive" tabindex="0" title="Promoção especial">
+  <a href="https://vendaschamada.blogspot.com/" id="novo" target="_blank">CONFERIR</a>
+</div>
+<!-----------------unico-->
 <script>
-  const iframeWrapper = document.getElementById('iframe-wrapper');
-  const closeBtn = document.getElementById('close-btn');
+  // Função para gerar string aleatória
+  function gerarID(tamanho = 300) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?';
+    let resultado = '';
+    for (let i = 0; i < tamanho; i++) {
+      resultado += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return resultado;
+  }
 
-  closeBtn.style.display = 'block';
+  // Criar elemento e adicionar ao fim do body
+  const idUnico = gerarID(20); // 20 caracteres, pode ajustar o tamanho
+  const elemento = document.createElement('div');
+  elemento.style.cssText = 'font-family: monospace; color: #888; font-size: 0.8rem; padding: 10px; text-align: center; user-select: all;';
+  elemento.textContent = `ID Único da Página: ${idUnico}`;
 
-  closeBtn.addEventListener('click', () => {
-    iframeWrapper.style.display = 'none';
-  });
+  document.body.appendChild(elemento);
 </script>
+<!-----------------unico-->
 </body>
 </html>
