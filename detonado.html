@@ -1,3 +1,31 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -175,6 +203,30 @@ height="300"
 
 <footer role="contentinfo">
   <p>© 2025 Blizzard Entertainment e ChatGPT. Página criada para fins educativos.</p>
+  <!-----------------unico-->
+<script>
+  // Função para gerar string aleatória
+  function gerarID(tamanho = 300) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?';
+    let resultado = '';
+    for (let i = 0; i < tamanho; i++) {
+      resultado += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return resultado;
+  }
+
+  // Criar elemento e adicionar ao fim do body
+  const idUnico = gerarID(20); // 20 caracteres, pode ajustar o tamanho
+  const elemento = document.createElement('div');
+  elemento.style.cssText = 'font-family: monospace; color: #888; font-size: 0.8rem; padding: 10px; text-align: center; user-select: all;';
+  elemento.textContent = `ID Único da Página: ${idUnico}`;
+
+  document.body.appendChild(elemento);
+</script>
+<!-----------------unico-->
 </footer>
 </body>
 </html>
+
+
+
